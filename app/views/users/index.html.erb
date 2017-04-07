@@ -1,0 +1,29 @@
+<DOCTYPE! html>
+<html>
+    <head>
+       <title>User Management</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                        <td><%= user.first_name %></td>
+                        <td><%= user.last_name %></td>
+                        <td><%= user.email_address %></td>
+                        <td><a href="/users/<%= user.id %>" data-method='get'>Show</a> <a href="/users/<%= user.id %>/edit" data-method='get'>Edit</a> <a href="/users/<%= user.id %>" data-method='delete'>Destroy</a></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <a href="/users/new">New User</a>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<DOCTYPE! html>
+<html>
+    <head>
+       <title>User Management</title>
+    </head>
+    <body>
+            <h5>First name:</h5> <p><%= @user.first_name %></p>
+            <h5>Last name:</h5> <p><%= @user.last_name %></p>
+            <h5>Email Address:</h5> <p><%= @user.email_address %></p>
+            <a href="/users/<%= @user.id %>/edit" data-method='get'>Edit</a>
+            <a href="/back">Back</a>
+    </body>
+</html>
